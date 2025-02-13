@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/Fonts/UberMoveBold.otf",
+      "sha1": "2b9970166aa9d2e6c2e8bd533f92a135956683a9"
+    },
+    {
+      "path": "assets/Fonts/UberMoveMedium.otf",
+      "sha1": "700411da9db773b355028a83033a01fa0e84e778"
+    }
+  ]
+}
