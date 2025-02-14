@@ -27,6 +27,7 @@ const OTPVerification = ({ navigation }) => {
   }, [canResend]);
 
   const handleChange = (text, index) => {
+    text = text.replace(/[^0-9]/g, "");
     if (text.length > 1) text = text.charAt(text.length - 1);
 
     let newOtp = [...otp];
@@ -79,19 +80,20 @@ const OTPVerification = ({ navigation }) => {
       </View>
 
       <TouchableOpacity
-        style={s`bg-white justify-center py-3 rounded-lg mt-6`}
+        style={s`bg-white justify-center py-3 rounded-lg mt-6 opacity-90`}
         onPress={() => navigation.navigate("HomeScreen")}
+        activeOpacity={0.9}
       >
-        <Text style={s`text-black text-center text-xl font-bold`}>Verify</Text>
+        <Text style={s`text-black text-center text-xl font-bold`} >Verify</Text>
       </TouchableOpacity>
-
-      {/* Resend OTP Button with Timer */}
+      
       <TouchableOpacity
         style={s`py-3 rounded-lg mt-4 ${
-          canResend ? "bg-gray-700" : "bg-gray-900"
+          canResend ? "bg-gray-800" : "bg-gray-950"
         }`}
         disabled={!canResend}
         onPress={resendOTP}
+        activeOpacity={0.9}
       >
         <Text style={s`text-white text-center text-lg`}>
           {canResend ? "Resend OTP" : `Resend OTP in ${timer}s`}
