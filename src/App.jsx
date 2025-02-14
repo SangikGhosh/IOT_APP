@@ -1,25 +1,22 @@
 import React from 'react';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { View, Text, StyleSheet } from 'react-native';
 import { s } from 'react-native-wind';
+import styles from './Fonts/customFonts';
+import Preloader from './components/Preloader';
+import SignupScreen from './components/SignupScreen';
+import SigninScreen from './components/SigninScreen';
+const Stack = createStackNavigator();
 
-const App = () => {
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={[s`text-gray-100 text-white text-4xl`, styles.text]}>Hey, Custom Font!</Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Preloader" component={Preloader} />
+        <Stack.Screen name="SignupScreen" component={SignupScreen} />
+        <Stack.Screen name="SigninScreen" component={SigninScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-};
-
-export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'black',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontFamily: 'UberMoveBold',
-  },
-});
+}
