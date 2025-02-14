@@ -8,10 +8,9 @@ import styles from './Fonts/customFonts';
 import Preloader from './components/Preloader';
 import HomeScreen from './components/HomeScreen';
 import AppNavigator from './components/AuthUI/AppNavigator';
-
+import OTPVerification from './components/OTPVerification';
 export default function App() {
   return (
-      // <Preloader/>
       <Preloader/>
   );
 }
